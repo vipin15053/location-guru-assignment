@@ -1,0 +1,15 @@
+.user-section{
+    margin: 20px;
+    padding: 10px;
+    background-color: rgb(210, 247, 248);
+    box-shadow: inset;
+    .header{
+        height: 50px;
+        .user-title{
+            float: left;
+        }
+        .add-usr-btn{
+            float: right;
+        }
+    }
+}

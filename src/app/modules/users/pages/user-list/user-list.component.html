@@ -1,0 +1,29 @@
+<table class="table table-hover table-bordered" *ngIf="userList.length>0">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Contact Number</th>
+        <th scope="col">Email</th>
+        <th scope="col">Date of Birth</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of userList" routerLink="details/{{user.email}}">
+        <td>{{user.name}}</td>
+        <td>{{user.contact}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.dob}}</td>
+        <td style="white-space: nowrap">
+          <a routerLink="edit/{{user.email}}" class="btn btn-sm btn-primary me-1">Edit</a>
+          <button (click)="deleteUser(user.email)" class="btn btn-sm btn-danger btn-delete-user" [disabled]="isDeleting">
+              <span>Delete</span>
+          </button>
+      </td>
+      </tr>
+      
+    </tbody>
+</table>
+<div *ngIf="!userList.length">
+  There is no any user available.
+</div>
